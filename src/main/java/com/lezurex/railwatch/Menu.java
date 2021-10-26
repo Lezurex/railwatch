@@ -1,6 +1,14 @@
 package com.lezurex.railwatch;
 
+import com.lezurex.railwatch.objects.Connection;
+import com.lezurex.railwatch.objects.Section;
+import com.lezurex.railwatch.objects.Stop;
+
 public class Menu {
+
+    Connection connection = new Connection();
+    Stop stop = new Stop();
+    Section section = new Section();
 
     public void print() {
 
@@ -13,7 +21,7 @@ public class Menu {
         System.out.println("Connections");
         System.out.println("------------------------------");
         System.out.println("Departure Time" + " ---- " + "Journey Length" + " ---- " + "Platform");
-        System.out.println("//getDepTime" + " ---- " + "//getLength" + " ---- " + "//getPlatform");
+        System.out.println(section.getDeparture() + " ---- " + connection.getDuration() + " ---- " + stop.getPlatform());
         System.out.println("------------------------------");
     }
 }
