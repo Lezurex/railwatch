@@ -15,6 +15,7 @@ public class Stop {
     }
 
     private Location station;
+    private Location location;
     private Date arrival;
     private long arrivalTimestamp;
     private Date departure;
@@ -23,11 +24,21 @@ public class Stop {
     private int platform;
     private Prognosis prognosis;
     private String realtimeAvailability;
-    
+
     @Override
     public String toString() {
-        return "Stop [arrival=" + arrival + ", delay=" + delay + ", departure=" + departure + ", platform=" + platform
-                + ", prognosis=" + prognosis + ", station=" + station + "]";
+        return "Stop{" +
+                "station=" + station +
+                ", location=" + location +
+                ", arrival=" + arrival +
+                ", arrivalTimestamp=" + arrivalTimestamp +
+                ", departure=" + departure +
+                ", departureTimestamp=" + departureTimestamp +
+                ", delay=" + delay +
+                ", platform=" + platform +
+                ", prognosis=" + prognosis +
+                ", realtimeAvailability='" + realtimeAvailability + '\'' +
+                '}';
     }
 
 }
