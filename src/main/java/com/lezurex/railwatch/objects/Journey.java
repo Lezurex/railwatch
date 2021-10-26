@@ -1,7 +1,9 @@
 package com.lezurex.railwatch.objects;
 
 import java.util.Arrays;
+import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -17,8 +19,9 @@ public class Journey {
     private String name;
     private String category;
     private String categoryCode;
+    private String subcategory;
     private String number;
-    private int operator;
+    private String operator;
     private String to;
     private Stop[] passList;
     private int capacity1st;

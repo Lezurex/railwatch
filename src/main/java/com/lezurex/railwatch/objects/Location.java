@@ -12,7 +12,7 @@ public class Location {
         return new ObjectMapper().readValue(json, Location.class);
     }
 
-    private int id;
+    private String id;
     private LocationType type;
     private String name;
     private int score;

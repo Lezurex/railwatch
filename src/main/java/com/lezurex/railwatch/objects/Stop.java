@@ -16,10 +16,13 @@ public class Stop {
 
     private Location station;
     private Date arrival;
+    private long arrivalTimestamp;
     private Date departure;
+    private long departureTimestamp;
     private int delay;
     private int platform;
     private Prognosis prognosis;
+    private String realtimeAvailability;
     
     @Override
     public String toString() {
