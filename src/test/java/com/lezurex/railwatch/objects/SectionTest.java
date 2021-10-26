@@ -1,5 +1,7 @@
 package com.lezurex.railwatch.objects;
 
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import org.junit.jupiter.api.Test;
@@ -8,7 +10,8 @@ public class SectionTest {
 
     @Test
     void testSection() throws JsonProcessingException {
-        Section.fromJson(json);
+        Section section = Section.fromJson(json);
+        assertNull(section.getWalk());
     }
 
     String json = """
