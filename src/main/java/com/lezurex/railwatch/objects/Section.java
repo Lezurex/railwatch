@@ -3,6 +3,9 @@ package com.lezurex.railwatch.objects;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.Getter;
+
+@Getter
 public class Section {
 
     public static Section fromJson(String json) throws JsonProcessingException {

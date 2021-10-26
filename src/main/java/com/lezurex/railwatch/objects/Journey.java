@@ -5,6 +5,9 @@ import java.util.Arrays;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.Getter;
+
+@Getter
 public class Journey {
     
     public static Journey fromJson(String json) throws JsonProcessingException {
