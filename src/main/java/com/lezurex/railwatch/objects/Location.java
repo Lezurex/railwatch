@@ -9,7 +9,7 @@ import lombok.Getter;
 @Getter
 public class Location {
 
-    public static Location fromJson(String json) throws JsonMappingException, JsonProcessingException {
+    public static Location fromJson(String json) throws JsonProcessingException {
         return new ObjectMapper().readValue(json, Location.class);
     }
 

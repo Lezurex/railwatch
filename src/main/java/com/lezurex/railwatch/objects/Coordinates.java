@@ -11,12 +11,17 @@ import lombok.Getter;
 @JsonIgnoreProperties
 public class Coordinates {
     
-    public static Coordinates fromJson(String json) throws JsonMappingException, JsonProcessingException {
+    public static Coordinates fromJson(String json) throws JsonProcessingException {
         return new ObjectMapper().readValue(json, Coordinates.class);
     }
 
     private String type;
     private double x;
     private double y;
+    
+    @Override
+    public String toString() {
+        return "Coordinates [type=" + type + ", x=" + x + ", y=" + y + "]";
+    }
 
 }
