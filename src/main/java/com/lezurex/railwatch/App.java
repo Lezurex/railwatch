@@ -11,7 +11,7 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Menu menu = new Menu(sc, new Connection(), new Stop(), new Section());
+        Menu menu = new Menu(sc, new Connection());
         menu.print();
 
     }

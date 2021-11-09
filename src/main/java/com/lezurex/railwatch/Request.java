@@ -13,6 +13,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.lezurex.railwatch.objects.Connection;
 
+/**
+ * This is Class sends a GET Request to the Transport API using the params from the User Input
+ */
 public class Request {
 
     private String departureStr;
