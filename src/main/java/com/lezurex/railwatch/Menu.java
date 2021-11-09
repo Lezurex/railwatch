@@ -7,12 +7,10 @@ import java.util.Scanner;
 
 public class Menu {
 
-    private Connection connection;
     private Scanner sc;
 
-    public Menu(Scanner sc, Connection connection){
+    public Menu(Scanner sc){
         this.sc = sc;
-        this.connection = connection;
     }
 
     public void print() {
