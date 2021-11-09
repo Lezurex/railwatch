@@ -33,14 +33,20 @@ public class Menu {
             var request = new Request(departure, destination, time);
             var connections = request.send();
 
-            System.out.println(LINE);
-            System.out.println("         Connections");
-            System.out.println(LINE);
-            System.out.println("Departure Time" + " ---- " + "Journey Length" + " ---- " + "Platform");
+            if (connections.length == 0){
+                System.out.println("No Connections found");
+            } else {
+                System.out.println(LINE);
+                System.out.println("         Connections");
+                System.out.println(LINE);
+                System.out.println("Departure Time" + " ---- " + "Journey Length" + " ---- " + "Platform");
 
-            for (Connection connection : connections) {
-                printConnection(connection);
+                for (Connection connection : connections) {
+                    printConnection(connection);
+                }
             }
+
+
 
         } catch (InputMismatchException e) {
             System.out.println("Wrong Character Input: " + e);
