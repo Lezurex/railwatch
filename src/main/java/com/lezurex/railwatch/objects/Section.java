@@ -1,5 +1,6 @@
 package com.lezurex.railwatch.objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -10,6 +11,7 @@ import lombok.Getter;
  * service.
  */
 @Getter
+@JsonIgnoreProperties
 public class Section {
 
     /**
@@ -29,7 +31,7 @@ public class Section {
      */
     private Journey journey;
     /** Information about walking distance, if available */
-    private String walk;
+    private WalkDuration walk;
     /** The departure {@link Stop} of the connection */
     private Stop departure;
     /** The arrival {@link Stop} of the connection */
