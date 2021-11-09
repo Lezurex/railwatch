@@ -41,7 +41,7 @@ public class Journey {
      * vehicle
      */
     private String to;
-    /** {@link Stops} the train passes on the {@link Journey} */
+    /** {@link Stop} the train passes on the {@link Journey} */
     private Stop[] passList;
     /** The maximum estimated occupation load of 1st class coaches */
     private int capacity1st;
