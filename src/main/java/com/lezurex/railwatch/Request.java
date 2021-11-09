@@ -1,5 +1,7 @@
 package com.lezurex.railwatch;
 
+import static java.net.HttpURLConnection.HTTP_OK;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,20 +16,35 @@ import com.google.gson.JsonParser;
 import com.lezurex.railwatch.objects.Connection;
 
 /**
- * This is Class sends a GET Request to the Transport API using the params from the User Input
+ * Sends a GET request to the Transport API using the params from the user input
  */
 public class Request {
 
+    /** Query string for the departure location */
     private String departureStr;
+    /** Query string for the destination location */
     private String destinationStr;
+    /** Query string for the departure time */
     private String departureTime;
 
+    /**
+     * Creates a new request ready to be sent to the Transport API
+     * 
+     * @param departureStr   Query string for the departure location
+     * @param destinationStr Query string for the destination location
+     * @param departureTime  Query string for the departure time
+     */
     public Request(String departureStr, String destinationStr, String departureTime) {
         this.departureStr = departureStr;
         this.destinationStr = destinationStr;
         this.departureTime = departureTime;
     }
 
+    /**
+     * Sends the prepared request to the Transport API
+     * 
+     * @return List of all possible {@link Connection Connections}
+     */
     public Connection[] send() {
         try {
             var params = String.format("from=%s&to=%s&time=%s", URLEncoder.encode(departureStr, "UTF-8"),
@@ -36,7 +53,7 @@ public class Request {
             var connection = (HttpsURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
-            if (connection.getResponseCode() == HttpsURLConnection.HTTP_OK) {
+            if (connection.getResponseCode() == HTTP_OK) {
 
                 var in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 String l;

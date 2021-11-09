@@ -1,5 +1,7 @@
 # Railwatch
 
+> Für bessere Ansicht auf [Github](https://github.com/Lezurex/railwatch) ansehen.
+
 ## Funktionsbeschreibung
 
 Wir wollen eine Terminal-App realisieren, die mithilfe einer API Zugverbindungen auflisten soll.
@@ -33,6 +35,16 @@ Schlussendlich soll die App so aussehen:
 ## Testprotokoll
 
 ### Funktionstests
+
+| Case               | Eingabe                     | Erwartet                    | Tatsächlich                 | OK/NOK |
+| ------------------ | --------------------------- | --------------------------- | --------------------------- | ------ |
+| Zeigt Menü         | Programmstart               | Zeigt Menü                  | Zeigt Menü                  | OK     |
+| Liest Startpunkt   | Zürich                      | Zürich HB als Startpunkt    | Zürich HB als Startpunkt    | OK     |
+| Liest Ziel         | Bern                        | Bern als Ziel               | Bern als Ziel               | OK     |
+| Liest Zeit         | 11:55                       | 11:55 als Startzeit         | 11:55 als Startzeit         | OK     |
+| Liest keine Zeit   |                             | Aktuelle Zeit als Startzeit | Aktuelle Zeit als Startzeit | OK     |
+| Keine Ergebnisse   | Beliebiger inexistenter Ort | Keine Ergebnisse Meldung    | Keine Ergebnisse Meldung    | OK     |
+| Tab wird gefiltert | (TAB)                       | Keine gültige Eingabe       | Keine gültige Eingabe       | OK     |
 
 ### Unit Tests
 
@@ -93,3 +105,13 @@ mvn exec:java
 ```bash
 mvn test
 ```
+
+### Maven-Projektübersicht generieren
+
+Generiert eine Projektübersicht, inklusive Apidocs.
+
+```bash
+mvn site
+```
+
+Die Übersicht ist zu finden unter `target/site/index.html`, die Apidocs befinden sich in `target/site/apidocs/index.html`.

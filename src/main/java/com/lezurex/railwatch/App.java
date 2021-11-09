@@ -1,9 +1,5 @@
 package com.lezurex.railwatch;
 
-import com.lezurex.railwatch.objects.Connection;
-import com.lezurex.railwatch.objects.Section;
-import com.lezurex.railwatch.objects.Stop;
-
 import java.util.Scanner;
 
 public class App {
@@ -13,6 +9,5 @@ public class App {
 
         Menu menu = new Menu(sc);
         menu.print();
-
     }
 }
