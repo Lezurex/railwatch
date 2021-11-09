@@ -24,17 +24,38 @@ public class Menu {
 
         System.out.println("------------------------------");
         System.out.println("----------Railwatch-----------");
+
         System.out.println("Type in the Departure Station: ");
-        sc.nextLine();
+        var departure = sc.nextLine();
         System.out.println("Type in the Station you're heading to: ");
-        sc.nextLine();
+        var destination = sc.nextLine();
         System.out.println("Type in the Time you want to depart: ");
-        sc.nextLine();
+        var time = sc.nextLine();
+
+        var request = new Request(departure, destination, time);
+        var connections = request.send();
+
         System.out.println("------------------------------");
         System.out.println("         Connections");
         System.out.println("------------------------------");
         System.out.println("Departure Time" + " ---- " + "Journey Length" + " ---- " + "Platform");
-        System.out.println(section.getDeparture() + " ---- " + connection.getDuration() + " ---- " + stop.getPlatform());
-        System.out.println("------------------------------");
+
+        for (Connection connection : connections) {
+            printConnection(connection);
+            printSection(section);
+            printStop(stop);
+        }
+    }
+
+    public void printConnection(Connection connection) {
+        System.out.print(connection.getDuration());
+    }
+
+    public void printSection(Section section){
+        System.out.print(section.getDeparture());
+    }
+
+    public void printStop(Stop stop){
+        System.out.print(stop.getPlatform());
     }
 }

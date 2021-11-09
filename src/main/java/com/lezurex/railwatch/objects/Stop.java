@@ -21,7 +21,7 @@ public class Stop {
     private Date departure;
     private long departureTimestamp;
     private int delay;
-    private int platform;
+    private String platform;
     private Prognosis prognosis;
     private String realtimeAvailability;
 
