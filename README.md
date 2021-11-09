@@ -86,6 +86,8 @@ Schlussendlich soll die App so aussehen:
 
 ## Nutzung
 
+Bei diesem Projekt wurde Git benutzt. Das Projekt kann mittels `git checkout` jederzeit an einem beliebigen Zeitpunkt angesehen werden.
+
 ### Voraussetzungen
 
 - Maven 3.8
